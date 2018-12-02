@@ -1,0 +1,400 @@
+/*For all pages*/
+img
+{
+    margin: auto;
+}
+
+/*Footer*/
+footer{
+    background-color: #2d2d30;
+    color: white;
+    padding: 25px;
+    width: 100%;
+    margin: auto;
+}
+
+footer a {
+    color: white;
+}
+
+footer a:hover {
+    color: #777;
+    text-decoration: none;
+}
+
+
+/*Home Page*/
+.myPage, html{
+    font-family: sans-serif;
+    color: black;
+    height: 100%;
+}
+
+.myPage{
+    height: 100%; 
+    background-repeat: no-repeat;
+    background-size: cover; 
+    background-color: #76323F;
+}
+
+.homeheader
+{
+    font-size: 30px;
+    text-align: center;
+    font-weight: bold;
+}
+
+.homeinfo{
+    font-size: large;
+}
+
+/* Full-width input fields */
+input[type=text], input[type=password], select {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+}
+
+/* Set a style for all buttons */
+.loginbtn {
+    background-color: #4CAF50;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+}
+
+.loginbtn:hover {
+    opacity: 0.8;
+}
+
+
+
+
+
+
+
+/* Extra styles for the cancel button */
+.cancelbtn {
+    width: auto;
+    padding: 10px 18px;
+    background-color: #f44336;
+}
+
+/* Center the image and position the close button */
+.imgcontainer {
+    text-align: center;
+    margin: 24px 0 12px 0;
+    position: relative;
+}
+
+.container-home {
+    padding: 16px;
+}
+
+.container-login {
+    width: 550px;
+}
+
+#container-forgotpsw{
+    margin-bottom : 15px;
+}
+
+/* The Modal (background) */
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+    padding-top: 60px;
+}
+
+/* Modal Content/Box */
+.modal-content {
+    background-color: #fefefe;
+    margin: 5% auto 15% auto; /* 5% from the top, 15% from the bottom and centered */
+    border: 1px solid #888;
+    width: 80%; /* Could be more or less, depending on screen size */
+}
+
+/* The Close Button (x) */
+.close {
+    position: absolute;
+    right: 25px;
+    top: 0;
+    color: #000;
+    font-size: 35px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: red;
+    cursor: pointer;
+}
+
+/* Add Zoom Animation */
+.animate {
+    -webkit-animation: animatezoom 0.6s;
+    animation: animatezoom 0.6s
+}
+
+@-webkit-keyframes animatezoom {
+    from {-webkit-transform: scale(0)} 
+    to {-webkit-transform: scale(1)}
+}
+    
+@keyframes animatezoom {
+    from {transform: scale(0)} 
+    to {transform: scale(1)}
+}
+
+/* Change styles for span and cancel button on extra small screens */
+@media screen and (max-width: 300px) {
+    span.psw {
+       display: block;
+       float: none;
+    }
+    .cancelbtn {
+       width: 100%;
+    }
+}
+
+/*Sign Up Page*/
+#signupPage, html{
+    font-family: sans-serif;
+    color: black;
+    height: 100%;
+}
+
+#signupPage{
+    height: 100%; 
+    background-repeat: no-repeat;
+    background-size: cover; 
+}
+
+.signupheader
+{
+    font-size: 25px;
+    text-align: left;
+    color: white;
+}
+
+.signupinfo{
+    font-size: 15px;
+}
+
+#signupheading{
+    background-color: #76323F !important;
+    height: 100px;
+    margin-bottom: 20px;
+    width: auto;
+}
+
+#signupform{
+    width: 500px;
+    margin-top: 70px;
+}
+
+
+
+/*Recovery Page*/
+#recoveryPage, html{
+    font-family: sans-serif;
+    color: black;
+    height: 100%;
+}
+
+#recoveryPage{
+    height: 100%; 
+    background-repeat: no-repeat;
+    background-size: cover; 
+}
+
+.recoveryheader
+{
+    font-size: 25px;
+    text-align: left;
+    color: white;
+}
+
+.recoveryinfo{
+    font-size: 15px;
+}
+
+#recoveryheading{
+    background-color: #76323F !important;
+    height: 100px;
+    margin-bottom: 20px;
+    width: auto;
+}
+
+#recoveryform{
+    width: 500px;
+    margin-top: 70px;
+}
+
+.address{
+    float: left;
+}
+
+.numbers{
+    float: right;
+}
+
+/*Dashboard Page*/
+#dashBody{
+  background: #f4f4f4;
+  /* For the navbar-fixed-top: */
+  padding-top: 50px;
+}
+
+.main-color-bg{
+  background-color: #D7CEC7 !important;
+  border-color: #D7CEC7 !important;
+  /* min-height: 32px !important; */
+  /* border-radius: 0; */
+  /* color: #333333; */
+}
+
+/* Navbar */
+.navbar{
+  /* min-height: 32px !important; */
+  border-bottom: 0;
+  margin-bottom: 0;
+  /* border-radius: 0; */
+}
+
+.navbar-nav > li > a, .navbar-brand{
+  /* padding-top: 6px !important; */
+  /* padding-bottom: 0 !important; */
+  /* height: 32px; */
+}
+
+.navbar-default {
+  background-color: #4f153e;
+  border-color: #bfaab9;
+}
+.navbar-default .navbar-brand {
+  color: #ffffff;
+}
+.navbar-default .navbar-brand:hover,
+.navbar-default .navbar-brand:focus {
+  color: #AEADAE;
+}
+.navbar-default .navbar-text {
+  color: #eadce8;
+}
+.navbar-default .navbar-nav > li > a {
+  color: #ffffff;
+}
+.navbar-default .navbar-nav > li > a:hover,
+.navbar-default .navbar-nav > li > a:focus {
+  color: #AEADAE;
+}
+.navbar-default .navbar-nav > .active > a,
+.navbar-default .navbar-nav > .active > a:hover,
+.navbar-default .navbar-nav > .active > a:focus {
+  color: #F3F2F3;
+  background-color: #95728B;
+}
+.navbar-default .navbar-nav > .open > a,
+.navbar-default .navbar-nav > .open > a:hover,
+.navbar-default .navbar-nav > .open > a:focus {
+  color: #f0f0f0;
+  background-color: #bfaab9;
+}
+.navbar-default .navbar-toggle {
+  border-color: #bfaab9;
+}
+.navbar-default .navbar-toggle:hover,
+.navbar-default .navbar-toggle:focus {
+  background-color: #bfaab9;
+}
+.navbar-default .navbar-toggle .icon-bar {
+  background-color: #eadce8;
+}
+.navbar-default .navbar-collapse,
+.navbar-default .navbar-form {
+  border-color: #eadce8;
+}
+.navbar-default .navbar-link {
+  color: #eadce8;
+}
+.navbar-default .navbar-link:hover {
+  color: #f0f0f0;
+}
+
+/* Header */
+#header, header small{
+  background: #78244c;
+  color: #ffffff;
+  padding-bottom:10px;
+  margin-bottom: 20px;
+}
+
+#header .create{
+  padding-top:20px;
+}
+
+/* Breadcrumb */
+.breadcrumb{
+  background: #cccccc;
+  color:#333333;
+}
+
+.breadcrumb a{
+  color: #333333;
+}
+
+@media (max-width: 767px) {
+  .navbar-default .navbar-nav .open .dropdown-menu > li > a {
+    color: #AEADAE;
+  }
+  .navbar-default .navbar-nav .open .dropdown-menu > li > a:hover,
+  .navbar-default .navbar-nav .open .dropdown-menu > li > a:focus {
+    color: #AEADAE;
+  }
+  .navbar-default .navbar-nav .open .dropdown-menu > .active > a,
+  .navbar-default .navbar-nav .open .dropdown-menu > .active > a:hover,
+  .navbar-default .navbar-nav .open .dropdown-menu > .active > a:focus {
+    color: #F3F2F3;
+    background-color: #95728B;
+  }
+}
+
+
+
+@media(max-width: 700px) and (min-width: 330px){
+    .container-login {
+        width: 250px;
+    }   
+}
+
+@media(max-width: 330px){
+    .container-login {
+        width: 120px;
+    }   
+}
+
+/*Admin-Dashboard*/
+#content{
+  width: 550px;
+  height: 300px;
+}
+
+#title{
+  width: 550px;
+  height: 40px;
+}

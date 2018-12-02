@@ -1,0 +1,26 @@
+{
+  "name": "student-portal",
+  "version": "1.0.0",
+  "description": "IUB Student Portal [Prototype]",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/iub-cse-shq/student-portal.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/iub-cse-shq/student-portal/issues"
+  },
+  "homepage": "https://github.com/iub-cse-shq/student-portal#readme",
+  "dependencies": {
+    "body-parser": "^1.18.3",
+    "ejs": "^2.6.1",
+    "express": "^4.16.4",
+    "nodemon": "^1.18.7"
+  }
+}
