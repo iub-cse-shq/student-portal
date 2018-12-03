@@ -11,6 +11,7 @@ var app = express();
 app.use(bodyParser.urlencoded({extended: false}));                              //asynchronous
 app.use(bodyParser.json());
 
+
 // Bring in Models:
 
 
@@ -40,6 +41,10 @@ app.get('/recover', function(request, response){
 
 app.get('/sign-up', function(request, response){
     response.render('sign-up');
+});
+
+app.get('/dash', function(request, response){
+    response.render('dash');
 });
 
 // Listen:

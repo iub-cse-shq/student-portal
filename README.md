@@ -14,7 +14,7 @@
 - [ ] ~~* Bootstrap connection made, but with partial viewing~~
 - [ ] ~~* Play around with index.ejs to verify, but it works~~
 - [ ] ~~* Try making changes to the main.css file and see if that's the issue, although console doesn't give any errors about the connection to the file~~
-- [x] **CSS file integration done**
+- [x] **CSS file integration done, although with a little caveat: The Bootsrap CSS files from Bower doesn't work completely, so Bootstrap CDN was used instead**
 
 * Modules installed so far:
     * npm installed 
