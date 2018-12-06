@@ -4,7 +4,16 @@
 
 **A proper documentation will be penned down later**
 
-# Updates:
+## Running:
+
+1. Run `./mongod` or
+  ````
+  mongod --norepair
+  mongod --nojournal
+  ````
+2. Run `node server`
+
+## Updates:
 
 - [x] Server working
 - [x] Connection established with main index.ejs
@@ -15,17 +24,39 @@
 - [ ] ~~* Play around with index.ejs to verify, but it works~~
 - [ ] ~~* Try making changes to the main.css file and see if that's the issue, although console doesn't give any errors about the connection to the file~~
 - [x] **CSS file integration done, although with a little caveat: The Bootsrap CSS files from Bower doesn't work completely, so Bootstrap CDN was used instead**
+- [x] Installed MongoDB
+- [x] Installed MongoDB module
+- [x] MongoDB connected and running
+- [ ] Using passport.js to handle login and authentication
+- [ ] Using LocalStrategy: storing the usernames and password in our local database
+- [ ] Also using bcrypt.js to hash passwords, and match hash to user input 
+- [x] Routes directory added, and routing functional:
+  * server.js only has the home route, and all other routes are in the routes directory
+- [x] User schema created
+- [x] Middlewares added for express-session, express-messages, express-validator
+- [x] Custom message.ejs template added to display middleware messages using connect-flash 
 
 * Modules installed so far:
-    * npm installed 
-    * nodemon
-    * express
-    * body-parser
-    * ejs
-    * bower
+  * npm installed 
+  * nodemon
+  * express
+  * body-parser
+  * ejs
+  * bower
+  * mongodb
+  * mongoose
+  * passport
+  * passport-local
+  * bcryptjs: For password Hashing
+  * connect-flash: For flash messages
+  * express-messages: For flash messaging
+  * express-session: For flash messaging
+  * express-validator: Validates forms
+
 * Required Modules:
-    * mongodb
-    * mongoose
+  * cookie-parser
+  * passport-http
+  * passport-local: Local database
 
 ## Technologies used:
 
