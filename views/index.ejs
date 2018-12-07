@@ -18,8 +18,8 @@
                     Founded in 1993, Independent University, Bangladesh is one of the oldest private universities in Bangladesh where academic excellence is a tradition, teaching a passion and lifelong learning a habit. IUB currently has more than 7,048 undergraduate and graduate students and over 10,455 alumni. The student population is projected to grow at 10% annually. The students of IUB experience an exciting academic life with copious opportunity to explore and nurture their innate talent.
                 </p>
         
-                <button class="loginbtn" onclick="document.getElementById('id01').style.display='block'" style="width:auto; align:center; background-color: #581845">Login</button>
-        
+                <a href="/login"> <button class="loginbtn" style="width:auto; align:center; background-color: #581845">Login</button> </a>
+                <!--onclick="document.getElementById('id01').style.display='block'"-->
             </div>
         </div>
     </div>
@@ -27,37 +27,37 @@
     <!--Login form-->
     <div class= "container container-home">
         <!--Second part which handles the styling of the account creation section-->
-        <div id="id01" class="modal">
-          <form class="modal-content animate">
-            <div class="imgcontainer">
-              <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">&times;</span>
-            </div>
+        <!--<div id="id01" class="modal">-->
+        <!--  <form class="modal-content animate">-->
+        <!--    <div class="imgcontainer">-->
+        <!--      <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">&times;</span>-->
+        <!--    </div>-->
             
-            <div class="container container-login">
-                <form action="https://web-project-amirahkabir.c9users.io/pages/dashboard/dash.html" name="loginForm" onsubmit="return validateForm()">
-                    <label for="uname"><b>Username</b></label>
-                    <input class="input" type="text" placeholder="Enter Username" name="uname" id="username"/>
+        <!--    <div class="container container-login">-->
+        <!--        <form method= "POST" action= "/index" name="loginForm">-->
+                    <!--onsubmit="return validateForm()"    (after name="loginForm") --> 
+        <!--            <label for="userID"><b>ID</b></label>-->
+        <!--            <input class="input" type="text" placeholder="Enter ID" name="id" id="userID"/>-->
             
-                    <label for="psw"><b>Password</b></label>
-                    <input class="input" type="password" placeholder="Enter Password" name="psw">
+        <!--            <label for="psw"><b>Password</b></label>-->
+        <!--            <input class="input" type="password" placeholder="Enter Password" name="psw" id="psw">-->
                   
-                    <label for="group"><b>Group</b></label>
-                    <select>
-                        <option label="Student">Student</option>
-                        <option label="Faculty">Faculty</option>
-                        <option label="Admin">Admin</option>
-                    </select>
+                    <!--<label for="group"><b>Group</b></label>-->
+                    <!--<select>-->
+                    <!--    <option label="Student">Student</option>-->
+                        <!--<option label="Admin">Admin</option>-->
+                    <!--</select>-->
                     
-                    <input class="loginbtn" type="submit" style="background-color: #581845" value="Login">
-                    <label>
-                        <input type="checkbox" checked="checked" name="remember"> Remember me
-                    </label>
-                    <br>
-                    <p>Forgot <a href="https://web-project-amirahkabir.c9users.io/pages/recovery/recover.html">password?</a></p>
-                </form>
-            </div>
-          </form>
-        </div>
+        <!--            <input class="loginbtn" type="submit" style="background-color: #581845" value="Login">-->
+        <!--            <label>-->
+        <!--                <input type="checkbox" checked="checked" name="remember"> Remember me-->
+        <!--            </label>-->
+        <!--            <br>-->
+        <!--            <p>Forgot <a href="https://web-project-amirahkabir.c9users.io/pages/recovery/recover.html">password?</a></p>-->
+        <!--        </form>-->
+        <!--    </div>-->
+        <!--  </form>-->
+        <!--</div>-->
 
         <br><br><br>
         <div class="panel panel-default">

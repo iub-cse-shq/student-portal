@@ -1,6 +1,7 @@
 var express = require('express');
 var router = express.Router();
 var bcrypt = require('bcryptjs');
+var passport = require('passport');
 
 // Bring in models
 // var article = require('../models/');
@@ -8,6 +9,10 @@ var User = require('../models/user');
 
 router.get('/admin-dash', function(request, response){
     response.render('admin-dash');
+});
+
+router.get ('/login', function (request, response){
+    response.render ('login');
 });
 
 router.get('/recover', function(request, response){
@@ -21,8 +26,10 @@ router.get('/sign-up', function(request, response){
 // Signup post:
 router.post('/sign-up', function(request, response){
     var name = request.body.name;
-    var studentId = request.body.studentId;
+    var username = request.body.username;
     var email = request.body.email;
+    var major = request.body.major;
+    var credits = request.body.credits;
     var password = request.body.password;
     var password2 = request.body.password2;
     
@@ -30,9 +37,12 @@ router.post('/sign-up', function(request, response){
     request.checkBody('name', 'Name is required').notEmpty();
     request.checkBody('email', 'Email is required').notEmpty();
     request.checkBody('email', 'Email is not valid').isEmail();
-    request.checkBody('studentId', 'Student ID is required: You need to be an IUB student').notEmpty();
+    request.checkBody('username', 'Student ID is required: You need to be an IUB student').notEmpty();
     request.checkBody('password', 'Password is required').notEmpty();
     request.checkBody('password2', 'Passwords do not match').equals(request.body.password);
+    request.checkBody('major', 'Major is required').notEmpty();
+    request.checkBody('credits', 'Please enter credits completed').notEmpty();
+    
     
     // Errors if any
     var errors = request.validationErrors();
@@ -45,8 +55,10 @@ router.post('/sign-up', function(request, response){
         var newUser = new User({
            name: name,
            email: email,
-           studentId: studentId,
-           password: password
+           username: username,
+           password: password,
+           major: major,
+           credits: credits
         });
         // Hash the password before saving the user object
         bcrypt.genSalt(10, function(error, salt){
@@ -71,8 +83,25 @@ router.post('/sign-up', function(request, response){
     }
 });
 
+// Login Form
 router.get('/dash', function(request, response){
     response.render('dash');
+});
+
+// Login Process
+router.post('/login', function(request, response, next){
+    passport.authenticate('local', {
+        successRedirect:'/dash',
+        failureRedirect: '/login',
+        failureFlash: true
+    })(request, response, next);
+});
+
+// Logout
+router.get('/logout', function(request, response){
+    request.logout();
+    request.flash('success', 'You are logged out');
+    response.redirect('/login');
 });
 
 module.exports = router;

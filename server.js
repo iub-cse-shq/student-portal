@@ -7,6 +7,8 @@ var mongoose = require('mongoose');
 var expressValidator = require('express-validator');
 var flash = require('connect-flash');
 var session = require('express-session');
+var passport = require('passport');
+var config = require('./config/database');
 
                                                                         // Modules:
 // Initialize express:
@@ -19,8 +21,9 @@ app.use(bodyParser.json());
 
 
 // Database Connection:
-var db_url = "mongodb://" + process.env.IP + ":27017";
-mongoose.connect(db_url+'/loginapp', { useNewUrlParser: true });
+// var db_url = "mongodb://" + process.env.IP + ":27017";
+// mongoose.connect(db_url+'/loginapp', { useNewUrlParser: true });
+mongoose.connect(config.database, { useNewUrlParser: true });
 mongoose.connection.once('open', function(){
    console.log("Mongoose connected to MongoDB"); 
 });
@@ -66,6 +69,17 @@ app.use(expressValidator({
     };
   }
 }));
+// Passport Config:
+require('./config/passport')(passport);
+// Passport middleware
+app.use(passport.initialize());
+app.use(passport.session());
+
+app.get('*', function(request, response, next){
+    response.locals.user = request.user || null;
+    next();
+});
+
 
                                                                         // Routes:
 // Home Route:

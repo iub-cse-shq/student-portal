@@ -19,22 +19,27 @@
 - [x] Connection established with main index.ejs
 - [x] JS(Client-side), CSS, and other frameworks, libraries should be moved to the public folder, where static files will be handled
 - [x] Using Bower as the frontend package manager to import Bootstrap and jQuery
-- [ ] ~~**Incomplete integration with Bootstrap for some reason:**~~
-- [ ] ~~* Bootstrap connection made, but with partial viewing~~
-- [ ] ~~* Play around with index.ejs to verify, but it works~~
-- [ ] ~~* Try making changes to the main.css file and see if that's the issue, although console doesn't give any errors about the connection to the file~~
-- [x] **CSS file integration done, although with a little caveat: The Bootsrap CSS files from Bower doesn't work completely, so Bootstrap CDN was used instead**
+~~- [ ] **Incomplete integration with Bootstrap for some reason:**~~
+~~- [ ] * Bootstrap connection made, but with partial viewing~~
+~~- [ ] * Play around with index.ejs to verify, but it works~~
+~~- [ ] * Try making changes to the main.css file and see if that's the issue, although console doesn't give any errors about the connection to the file~~
+- [x] **CSS file integration done, although with a little caveat: The Bootstrap CSS files from Bower doesn't work completely, so Bootstrap CDN was used instead**
 - [x] Installed MongoDB
 - [x] Installed MongoDB module
 - [x] MongoDB connected and running
-- [ ] Using passport.js to handle login and authentication
-- [ ] Using LocalStrategy: storing the usernames and password in our local database
-- [ ] Also using bcrypt.js to hash passwords, and match hash to user input 
+- [x] Using passport.js to handle login and authentication
+- [x] Using LocalStrategy: storing the usernames and password in our local database
+- [x] Also using bcrypt.js to hash passwords, and match hash to user input 
 - [x] Routes directory added, and routing functional:
   * server.js only has the home route, and all other routes are in the routes directory
 - [x] User schema created
 - [x] Middlewares added for express-session, express-messages, express-validator
 - [x] Custom message.ejs template added to display middleware messages using connect-flash 
+- [x] Backend working
+- [x] Registration/Signup working: Full integration with database
+- [x] To make passport work, create a config file  created, and place strategies there
+- [x] Login system also working: Fully functional with passport and mongodb
+- [x] User schema updated
 
 * Modules installed so far:
   * npm installed 
@@ -46,7 +51,7 @@
   * mongodb
   * mongoose
   * passport
-  * passport-local
+  * passport-local: Local database
   * bcryptjs: For password Hashing
   * connect-flash: For flash messages
   * express-messages: For flash messaging
@@ -56,7 +61,6 @@
 * Required Modules:
   * cookie-parser
   * passport-http
-  * passport-local: Local database
 
 ## Technologies used:
 

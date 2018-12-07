@@ -6,7 +6,7 @@ var UserSchema = mongoose.Schema({
         type:String,
         required:true
     },
-    studentId:{
+    username:{
         type:String,
         required:true
     },
@@ -17,6 +17,16 @@ var UserSchema = mongoose.Schema({
     password:{
         type:String,
         required:true
+    },
+    posts:{
+        type:String
+    },
+    major:{
+        type:String,
+        required: true
+    },
+    credits:{
+        type: Number
     }
 });
 
