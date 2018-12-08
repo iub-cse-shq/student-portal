@@ -1,4 +1,12 @@
 /*For all pages*/
+* {
+    font-family: 'Roboto', sans-serif;
+}
+
+a {
+    text-decoration: none;
+}
+
 img
 {
     margin: auto;
@@ -11,6 +19,7 @@ footer{
     padding: 25px;
     width: 100%;
     margin: auto;
+    margin-top: 20px;
 }
 
 footer a {
@@ -72,12 +81,6 @@ input[type=text], input[type=password], select {
 .loginbtn:hover {
     opacity: 0.8;
 }
-
-
-
-
-
-
 
 /* Extra styles for the cancel button */
 .cancelbtn {
@@ -285,6 +288,18 @@ input[type=text], input[type=password], select {
     margin-top: 70px;
 }
 
+.alert-error{
+    color: #a94442;
+    background-color: #f2dede;
+    border-color: #ebccd1;
+}
+
+.alert-success{
+    color: #3c763d;
+    background-color: #dff0d8;
+    border-color: #d6e9c6;
+}
+
 /*Dashboard Page*/
 #dashBody{
   background: #f4f4f4;
@@ -366,6 +381,15 @@ input[type=text], input[type=password], select {
 }
 .navbar-default .navbar-link:hover {
   color: #f0f0f0;
+}
+
+/*Add Post Page*/
+#postBody{
+    margin-top:60px;
+}
+
+.formAdd{
+    width: 500px;
 }
 
 /* Header */

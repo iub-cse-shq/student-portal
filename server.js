@@ -13,12 +13,8 @@ var config = require('./config/database');
                                                                         // Modules:
 // Initialize express:
 var app = express();
-app.use(bodyParser.urlencoded({extended: false}));                              //asynchronous
+app.use(bodyParser.urlencoded({extended: false}));
 app.use(bodyParser.json());
-
-
-                                                                        // Bring in Models:
-
 
 // Database Connection:
 // var db_url = "mongodb://" + process.env.IP + ":27017";
@@ -75,13 +71,19 @@ require('./config/passport')(passport);
 app.use(passport.initialize());
 app.use(passport.session());
 
+//Global variables, for error messages and the like:
+app.use(function(request, response, next){
+   response.locals.error_msg = request.flash('error_msg');
+   next();
+});
+// Global variable to track login 
 app.get('*', function(request, response, next){
-    response.locals.user = request.user || null;
+    response.locals.user = request.user || null;                                //request.user holds only when user is logged in, otherwise: null
     next();
 });
 
 
-                                                                        // Routes:
+                                                                                // Routes:
 // Home Route:
 app.get('/', function(request, response){
     // response.send('Hello World');                                            //Test

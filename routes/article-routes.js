@@ -2,12 +2,13 @@ var express = require('express');
 var router = express.Router();
 var bcrypt = require('bcryptjs');
 var passport = require('passport');
+var {ensureAuthenticated} = require('../helpers/auth');
 
 // Bring in models
-// var article = require('../models/');
 var User = require('../models/user');
+var Post = require('../models/post');                                           //...............................................
 
-router.get('/admin-dash', function(request, response){
+router.get('/admin-dash', ensureAuthenticated, function(request, response){
     response.render('admin-dash');
 });
 
@@ -21,6 +22,13 @@ router.get('/recover', function(request, response){
 
 router.get('/sign-up', function(request, response){
     response.render('sign-up');
+});
+
+// Add Article Route:
+router.get('/dash/posts/add', function(request, response){
+  response.render('add-post', {
+    title: 'Add Post'
+  });
 });
 
 // Signup post:
@@ -84,8 +92,17 @@ router.post('/sign-up', function(request, response){
 });
 
 // Login Form
-router.get('/dash', function(request, response){
-    response.render('dash');
+router.get('/dash', ensureAuthenticated, function(request, response){
+    Post.find({}, function(error, posts){
+        if(error){
+            console.log(error);
+        } else {
+            response.render('dash', {
+            title: 'Posts',
+            posts: posts
+            });
+        }
+    });
 });
 
 // Login Process

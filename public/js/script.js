@@ -7,8 +7,6 @@ function validateForm(){
     }
 }
 
-
-
 //Admin makes new post 
 
 var newpost = {title:"", content:""};

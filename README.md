@@ -40,6 +40,11 @@
 - [x] To make passport work, create a config file  created, and place strategies there
 - [x] Login system also working: Fully functional with passport and mongodb
 - [x] User schema updated
+- [ ] Email addresses need to be verified to ensure only one account per email address
+- [x] Access control implementation required: Preventing outside users to see the dashboard
+- [x] Access controls added: Non-users cannot directly go to dashboard, nor the admin-dash page
+- [x] Second collection for database required, and added
+- 
 
 * Modules installed so far:
   * npm installed 
