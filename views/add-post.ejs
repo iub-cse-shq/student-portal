@@ -28,26 +28,41 @@
         </div>
       </div>
     </nav>
+
     
   <div class="container" id= "formAdd">
     <h1> <%= title %> </h1>
+    <hr />
     <form method="POST" action="/dash/posts/add">
       <div id="form-group">
         <label>Title:</label>
-        <input class="form-control" name="title" type="text" />
+        <input class="form-control" name="title" type="text" / required>
       </div>
   
       <div id="form-group">
         <label>Author:</label>
-        <input class="form-control" name="author" type="text" />
+        <input class="form-control" name="author" type="text" / required>
       </div>
   
       <div id="form-group">
         <label>Body:</label>
         <textarea class="form-control" name="body"> </textarea>
         <br />
-        <input class="btn btn-primary" type="submit" name="submit-btn" value="Submit">
+        
+        <label class="radio-inline">
+          <input type="radio" name="optradio" value="0" checked />Public
+        </label>
+        <label class="radio-inline">
+          <input type="radio" name="optradio" value="1" />Private
+        </label>
+        <hr />
+        <input class="btn btn-default" type="submit" name="submit-btn" value="Submit">
       </div>
+      
+      
     </form>
   </div>
+  
+  <br><br><br><br><br>
+  
 <% include partials/footer %>

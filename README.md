@@ -47,8 +47,15 @@
 - [ ] Potential improvement/optimization: Currently have to set the navbar despite using ejs for each page added that follows from dashboard. Mostly because the class="active" moves around. Must be a workaround
 - [x] Posts can now be viewed in the dashboard
 - [x] Posts can be added and then viewed
-- [x] Posts can be edited and updated, and have it reflected in the database
-- 
+- [x] Posts can be edited and updated, and have it reflected in the database: Create, Read, Update working
+- [x] AJAX required to delete posts
+- [x] Full CRUD functionality
+- [x] ~~Removed required: true on Post schema~~
+- [x] Google Calendar added
+- [ ] Bug: Post update prompts show up on Login Page and Add Post page (even when you go to dash from Add Post page and then logout)
+- [x] Vulnerability: Any logged in users can go straight to another user's edit form page
+- [x] Public/private posts added
+- [ ] Issue rendering the prompt messages properly
 
 * Modules installed so far:
   * npm installed 

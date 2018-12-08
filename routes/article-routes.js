@@ -24,7 +24,7 @@ router.get('/sign-up', function(request, response){
     response.render('sign-up');
 });
 
-// Add Article Route:
+// Add Post Route:
 router.get('/dash/posts/add', function(request, response){
   response.render('add-post', {
     title: 'Add Post'
@@ -33,21 +33,40 @@ router.get('/dash/posts/add', function(request, response){
 
 // Add Post Route POST:
 router.post('/dash/posts/add', function(request, response){
+    request.checkBody('title', 'Title is required').notEmpty();
+    request.checkBody('author', 'Author is required').notEmpty();
+    request.checkBody('body', 'Body is required').notEmpty();
+    
     console.log('Submitted');
-    var post = new Post();
-    post.title = request.body.title;             //This is where bodyParser is needed
-    post.author = request.body.author;
-    post.body = request.body.body;
-
-    post.save(function(error){
-      if(error){
-        console.log(error);
-        return;
-      } else {
-        request.flash('success', 'Article Added');
-        response.redirect('/dash');
-      }
-    });
+    console.log(request.body);
+    console.log(request.user);
+    console.log(request.body.optradio);
+    
+    // Get errors:
+    var errors = request.validationErrors();
+    if(errors){
+      response.render('add-post', {
+        title: 'Add Post',
+        errors: errors
+      });
+    } else {
+      var post = new Post();
+      post.title = request.body.title;             //This is where bodyParser is needed
+      post.author = request.body.author;
+      post.body = request.body.body;
+      post.user = request.user.id;
+      post.privacy = request.body.optradio;
+  
+      post.save(function(error){
+        if(error){
+          console.log(error);
+          return;
+        } else {
+          request.flash('success', 'Post Added');
+          response.redirect('/dash');
+        }
+      });
+    }
 });
 
 // Signup post:
@@ -112,7 +131,7 @@ router.post('/sign-up', function(request, response){
 
 // Dashboard
 router.get('/dash', ensureAuthenticated, function(request, response){
-    Post.find({}, function(error, posts){
+    Post.find({ $or: [{user: request.user.id}, {privacy: '0'}]}, function(error, posts){
         if(error){
             console.log(error);
         } else {
@@ -141,13 +160,19 @@ router.get('/logout', function(request, response){
 });
 
 // Load Edit Form:
-router.get('/post/edit/:id', function(request, response){
+router.get('/post/edit/:id', ensureAuthenticated, function(request, response){
   Post.findById(request.params.id, function(error, post){
-    response.render('edit-post', {
+    // Vulnerability fix: Ensuring different user cannot access another's edit form
+    if(post.user != request.user.id){
+      request.flash('error_msg', 'Unauthorized Access');
+      response.redirect('/dash');
+    } else {
+      response.render('edit-post', {
       title: 'Edit Post',
       post: post
-    });
-    // console.log(article);
+      });
+    }
+    // console.log(post);
     // return;
   });
 });
@@ -172,6 +197,18 @@ router.post('/post/edit/:id', function(request, response){
   });
   // console.log('Submitted');
   // return;
+});
+
+// Delete request route
+router.delete('/dash/post/:id', function(request, response){
+  var query = {_id:request.params.id}
+
+  Post.remove(query, function(error){
+    if(error){
+      console.log(error);
+    }
+    response.send('Success');
+  });
 });
 
 // Get single post:

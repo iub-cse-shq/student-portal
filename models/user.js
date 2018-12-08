@@ -18,9 +18,6 @@ var UserSchema = mongoose.Schema({
         type:String,
         required:true
     },
-    posts:{
-        type:String
-    },
     major:{
         type:String,
         required: true

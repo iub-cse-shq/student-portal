@@ -10,6 +10,14 @@ var postSchema = mongoose.Schema({
       type: String,
       required: true
     },
+    user:{
+      type: String,
+      required: true
+    },
+    privacy:{
+      type: String,
+      required: true
+    },
     body:{
       type: String,
       required: true

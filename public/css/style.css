@@ -37,6 +37,8 @@ footer a:hover {
     font-family: sans-serif;
     color: black;
     height: 100%;
+    margin: 0;
+    padding: 0;
 }
 
 .myPage{
@@ -179,6 +181,8 @@ input[type=text], input[type=password], select {
     font-family: sans-serif;
     color: black;
     height: 100%;
+    margin: 0;
+    padding: 0;
 }
 
 #signupPage{
@@ -217,6 +221,8 @@ input[type=text], input[type=password], select {
     font-family: sans-serif;
     color: black;
     height: 100%;
+    margin: 0;
+    padding: 0;
 }
 
 #recoveryPage{
@@ -261,6 +267,8 @@ input[type=text], input[type=password], select {
     font-family: sans-serif;
     color: black;
     height: 100%;
+    margin: 0;
+    padding: 0;
 }
 
 #loginPage{
@@ -404,15 +412,6 @@ input[type=text], input[type=password], select {
   padding-top:20px;
 }
 
-/* Breadcrumb */
-.breadcrumb{
-  background: #cccccc;
-  color:#333333;
-}
-
-.breadcrumb a{
-  color: #333333;
-}
 
 @media (max-width: 767px) {
   .navbar-default .navbar-nav .open .dropdown-menu > li > a {
@@ -428,20 +427,6 @@ input[type=text], input[type=password], select {
     color: #F3F2F3;
     background-color: #95728B;
   }
-}
-
-
-
-@media(max-width: 700px) and (min-width: 330px){
-    .container-login {
-        width: 250px;
-    }   
-}
-
-@media(max-width: 330px){
-    .container-login {
-        width: 120px;
-    }   
 }
 
 /*Admin-Dashboard*/
