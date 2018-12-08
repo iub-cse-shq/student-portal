@@ -31,6 +31,25 @@ router.get('/dash/posts/add', function(request, response){
   });
 });
 
+// Add Post Route POST:
+router.post('/dash/posts/add', function(request, response){
+    console.log('Submitted');
+    var post = new Post();
+    post.title = request.body.title;             //This is where bodyParser is needed
+    post.author = request.body.author;
+    post.body = request.body.body;
+
+    post.save(function(error){
+      if(error){
+        console.log(error);
+        return;
+      } else {
+        request.flash('success', 'Article Added');
+        response.redirect('/dash');
+      }
+    });
+});
+
 // Signup post:
 router.post('/sign-up', function(request, response){
     var name = request.body.name;
@@ -91,7 +110,7 @@ router.post('/sign-up', function(request, response){
     }
 });
 
-// Login Form
+// Dashboard
 router.get('/dash', ensureAuthenticated, function(request, response){
     Post.find({}, function(error, posts){
         if(error){
@@ -119,6 +138,52 @@ router.get('/logout', function(request, response){
     request.logout();
     request.flash('success', 'You are logged out');
     response.redirect('/login');
+});
+
+// Load Edit Form:
+router.get('/post/edit/:id', function(request, response){
+  Post.findById(request.params.id, function(error, post){
+    response.render('edit-post', {
+      title: 'Edit Post',
+      post: post
+    });
+    // console.log(article);
+    // return;
+  });
+});
+
+// Edit post Route POST:
+router.post('/post/edit/:id', function(request, response){
+  var post = {};
+  post.title = request.body.title;             //This is where bodyParser is needed
+  post.author = request.body.author;
+  post.body = request.body.body;
+
+  var query = {_id:request.params.id};
+
+  Post.update(query, post, function(error){
+    if(error){
+      console.log(error);
+      return;
+    } else {
+      request.flash('success', 'Post Updated');
+      response.redirect('/dash');
+    }
+  });
+  // console.log('Submitted');
+  // return;
+});
+
+// Get single post:
+// This has to stay at the bottom
+router.get('/dash/post/:id', function(request, response){
+  Post.findById(request.params.id, function(error, post){
+    console.log(request.params.id);
+    // return;
+    response.render('post', {
+      post: post
+    });
+  });
 });
 
 module.exports = router;

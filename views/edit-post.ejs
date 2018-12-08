@@ -1,0 +1,55 @@
+<% include partials/header %>
+  <head>
+      <title>Add a Post</title>
+    </head>
+
+    <body id="postBody">
+      <nav class="navbar navbar-default navbar-fixed-top">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              <a class="navbar-brand" href="#">Dashboard</a>
+            </div>
+            <div id="navbar" class="collapse navbar-collapse">
+              <ul class="nav navbar-nav">
+                <li><a href="/dash">Home</a></li>
+                <li class><a href="/dash/posts/add">Add Article</a></li>
+                <li class="active"><a href="/dash/posts/edit">Edit Post</a></li>
+              </ul>
+    
+              <ul class="nav navbar-nav navbar-right">
+                <li><a href="/dash"><span class="glyphicon glyphicon-user"></span>  <%= user.name %> </a></li>
+                <li><a href="/logout"><span class="glyphicon glyphicon-log-out"></span> Logout</a></li>
+              </ul>
+            </div>
+          </div>
+        </nav>
+  
+    <div class="container" id= "formEdit">
+        <h1> <%= title %> </h1>
+        <hr />
+        <form method="POST" action="/post/edit/<%=post._id%>">
+            <div id="form-group">
+              <label>Title:</label>
+              <input class="form-control" name="title" type="text" value="<%=post.title%>"/>
+            </div>
+        
+            <div id="form-group">
+              <label>Author:</label>
+              <input class="form-control" name="author" type="text" value="<%=post.author%>"/>
+            </div>
+        
+            <div id="form-group">
+              <label>Body:</label>
+              <textarea class="form-control" name="body"><%=post.body%></textarea>
+              <br />
+              <input class="btn btn-primary" type="submit" name="submit-btn" value="Submit">
+            </div>
+        </form>
+    </div>
+<% include partials/footer %>

@@ -44,6 +44,10 @@
 - [x] Access control implementation required: Preventing outside users to see the dashboard
 - [x] Access controls added: Non-users cannot directly go to dashboard, nor the admin-dash page
 - [x] Second collection for database required, and added
+- [ ] Potential improvement/optimization: Currently have to set the navbar despite using ejs for each page added that follows from dashboard. Mostly because the class="active" moves around. Must be a workaround
+- [x] Posts can now be viewed in the dashboard
+- [x] Posts can be added and then viewed
+- [x] Posts can be edited and updated, and have it reflected in the database
 - 
 
 * Modules installed so far:
